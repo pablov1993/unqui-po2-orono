@@ -45,5 +45,5 @@ class TestBanco {
 		
 		banco.generarSolicitud(rocio, 2000f, 2, propiedad);
 		assertEquals(banco.evaluarSolicitudDe(rocio),true);
-	}
+	}	
 }
