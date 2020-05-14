@@ -7,6 +7,7 @@ public class Cliente {
 	private String direccion;
 	private Integer edad;
 	private Float sueldoNetoMensual;
+	private Float cuenta;
 	
 	public Cliente(String nombre, String apellido, String direccion, Integer edad, Float sueldoNetoMensual) {
 		
@@ -15,6 +16,7 @@ public class Cliente {
 		this.direccion = direccion;
 		this.edad = edad;
 		this.sueldoNetoMensual = sueldoNetoMensual;
+		this.cuenta = 0f;
 	}
 
 	public String getNombre() {
@@ -35,6 +37,23 @@ public class Cliente {
 
 	public int getEdad() {
 		return this.edad;
+	}
+
+	public void solicitarCredito(Banco banco, Float monto, Integer plazo) {
+		banco.generarSolicitud(this, monto, plazo);
+	}
+
+	public void solicitarCredito(Banco banco, Float monto, Integer plazo, Propiedad propiedad) {
+		banco.generarSolicitud(this, monto, plazo, propiedad);
+	}
+
+	public void setCuenta(Float monto) {
+		cuenta = cuenta + monto;		
+	}
+
+	public Float getCuenta() {
+		// TODO Auto-generated method stub
+		return this.cuenta;
 	}
 	
 

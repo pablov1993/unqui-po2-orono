@@ -35,6 +35,7 @@ public class Banco {
 		
 		if(solicitud.solicitudAceptable(cliente)) {
 			solicitud.setStatus("Aprobado");
+			cliente.setCuenta(solicitud.monto);
 			
 		}
 		else {
