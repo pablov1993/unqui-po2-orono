@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Banco {
 	
 	private ArrayList<Cliente> clientes;
-	private ArrayList<SolicitudesCredito> solicitudesCredito;
+	private ArrayList<SolicitudCredito> solicitudesCredito;
 	
 	public Banco() {
 		
 		this.clientes = new ArrayList<Cliente>();
-		this.solicitudesCredito = new ArrayList<SolicitudesCredito>();
+		this.solicitudesCredito = new ArrayList<SolicitudCredito>();
 	}
 
 	public void registrarCliente(Cliente cliente) {
@@ -21,17 +21,17 @@ public class Banco {
 		return this.clientes;
 	}
 
-	public void generarSolicitud(Cliente cliente, Float monto, Integer plazo) {
-		this.solicitudesCredito.add(new CreditoPersonal(cliente.getNombre(),cliente.getApellido(), monto, plazo));
+	public void generarSolicitud(SolicitudCredito solicitud) {
+		this.solicitudesCredito.add(solicitud);
 	}
 	
-	public ArrayList<SolicitudesCredito> getSolicitudes() {
+	public ArrayList<SolicitudCredito> getSolicitudes() {
 		return this.solicitudesCredito;
 	}
 
 	public boolean evaluarSolicitudDe(Cliente cliente) {
 		
-		SolicitudesCredito solicitud = this.solicitudDe(cliente);
+		SolicitudCredito solicitud = this.solicitudDe(cliente);
 		
 		if(solicitud.solicitudAceptable(cliente)) {
 			solicitud.setStatus("Aprobado");
@@ -45,11 +45,11 @@ public class Banco {
 		return solicitud.solicitudAceptable(cliente);
 	}
 
-	public SolicitudesCredito solicitudDe(Cliente cliente) {
+	public SolicitudCredito solicitudDe(Cliente cliente) {
 		
-		SolicitudesCredito solicitud = null;
+		SolicitudCredito solicitud = null;
 		
-		for(SolicitudesCredito solicitudes : solicitudesCredito) {
+		for(SolicitudCredito solicitudes : solicitudesCredito) {
 			
 			if(solicitudes.getNombre() == cliente.getNombre() & solicitudes.getApellido() == cliente.getApellido()) {
 				solicitud = solicitudes;
@@ -58,10 +58,6 @@ public class Banco {
 		return solicitud;
 	}
 
-	public void generarSolicitud(Cliente cliente, Float monto, Integer plazo, Propiedad propiedad) {
-		
-		this.solicitudesCredito.add(new CreditoHipotecario(cliente.getNombre(),cliente.getApellido(), monto, plazo, propiedad));
-	}
 	
 	
 	

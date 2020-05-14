@@ -1,9 +1,9 @@
 package ar.edu.unq.po2.tp6;
 
-public class CreditoPersonal extends SolicitudesCredito {
+public class CreditoPersonal extends SolicitudCredito {
 
-	public CreditoPersonal(String nombre, String apellido, Float monto, Integer plazo) {
-		super(nombre, apellido, monto, plazo);
+	public CreditoPersonal(Cliente cliente, Float monto, Integer plazo) {
+		super(cliente, monto, plazo);
 
 	}
 

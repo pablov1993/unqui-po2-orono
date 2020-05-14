@@ -1,16 +1,17 @@
 package ar.edu.unq.po2.tp6;
 
-public abstract class SolicitudesCredito {
+public abstract class SolicitudCredito {
 	
 	protected String nombre;
 	protected String apellido;
 	protected Float monto;
 	protected Integer plazo;
 	protected String status;
-	public SolicitudesCredito(String nombre, String apellido, Float monto, Integer plazo) {
+	
+	public SolicitudCredito(Cliente cliente, Float monto, Integer plazo) {
 		
-		this.nombre = nombre;
-		this.apellido = apellido;
+		this.nombre = cliente.getNombre();
+		this.apellido = cliente.getApellido();
 		this.monto = monto;
 		this.plazo = plazo;
 		this.status = "Pendiente";

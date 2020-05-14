@@ -1,11 +1,11 @@
 package ar.edu.unq.po2.tp6;
 
-public class CreditoHipotecario extends SolicitudesCredito {
+public class CreditoHipotecario extends SolicitudCredito {
 	
 	private Propiedad propiedad;
 	
-	public CreditoHipotecario(String nombre, String apellido, Float monto, Integer plazo, Propiedad propiedad) {
-		super(nombre, apellido, monto, plazo);
+	public CreditoHipotecario(Cliente cliente, Float monto, Integer plazo, Propiedad propiedad) {
+		super(cliente, monto, plazo);
 		this.propiedad = propiedad;
 	}
 
