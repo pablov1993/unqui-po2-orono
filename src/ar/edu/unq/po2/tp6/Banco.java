@@ -71,7 +71,10 @@ public class Banco {
 	public ArrayList<SistemaInformatico> getSistemasInformaticos() {
 		return this.sistemasInformaticos;
 	}
-
+	
+	public Integer getSize() {
+		return this.sistemasInformaticos.size();
+	}
 	
 	
 	

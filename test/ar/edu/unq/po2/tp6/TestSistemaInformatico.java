@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
 import static org.mockito.Mockito.*;
 
 class TestSistemaInformatico {
@@ -25,9 +24,8 @@ class TestSistemaInformatico {
 	@Test
 	void testAltaDeSistemaInformatico() {
 		
-//		banco.altaDeSistemaInformatico(sistemaInformatico);
-//		when(banco.getSistemasInformaticos().size()).thenReturn(1);
-		assertEquals(1,1);
+		when(banco.getSize()).thenReturn(1);
+		assertEquals(banco.getSize(),1);
 	}
 	
 	void testSistemaInformaticoRegistraCredito() {
