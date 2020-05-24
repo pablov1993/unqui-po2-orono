@@ -6,11 +6,13 @@ public class Banco {
 	
 	private ArrayList<Cliente> clientes;
 	private ArrayList<SolicitudCredito> solicitudesCredito;
+	private ArrayList<SistemaInformatico> sistemasInformaticos;
 	
 	public Banco() {
 		
 		this.clientes = new ArrayList<Cliente>();
 		this.solicitudesCredito = new ArrayList<SolicitudCredito>();
+		this.sistemasInformaticos = new ArrayList<SistemaInformatico>();
 	}
 
 	public void registrarCliente(Cliente cliente) {
@@ -35,7 +37,7 @@ public class Banco {
 		
 		if(solicitud.solicitudAceptable(cliente)) {
 			solicitud.setStatus("Aprobado");
-			cliente.setCuenta(solicitud.monto);
+			pagarPrestamo(cliente,solicitud.getMonto());
 			
 		}
 		else {
@@ -43,6 +45,10 @@ public class Banco {
 			solicitud.setStatus("Rechazado");
 		}
 		return solicitud.solicitudAceptable(cliente);
+	}
+
+	private void pagarPrestamo(Cliente cliente, Float monto) {
+		cliente.setCuenta(monto);		
 	}
 
 	public SolicitudCredito solicitudDe(Cliente cliente) {
@@ -56,6 +62,14 @@ public class Banco {
 			}
 		}		
 		return solicitud;
+	}
+
+	public void altaDeSistemaInformatico(SistemaInformatico sistemaInformatico) {
+		this.sistemasInformaticos.add(sistemaInformatico);
+	}
+
+	public ArrayList<SistemaInformatico> getSistemasInformaticos() {
+		return this.sistemasInformaticos;
 	}
 
 	

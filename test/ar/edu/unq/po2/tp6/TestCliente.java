@@ -10,14 +10,15 @@ class TestCliente {
 	private Cliente cliente;
 	private Banco banco;
 	private Propiedad propiedad;
+	private SistemaInformatico homeBanking;
 	
 	@BeforeEach
 	public void setUp() {
 		
 		
-		this.banco = new Banco();
-		this.cliente = new Cliente("Pablo","Orono","Bernal", 27,30000f, banco);
+		this.banco = new Banco();		
 		this.propiedad = new Propiedad("Depto","Bernal",120000f);
+		this.homeBanking = new HomeBanking();
 	}
 
 	@Test
@@ -33,6 +34,12 @@ class TestCliente {
 		cliente.solicitarCredito(12000f, 10, propiedad);
 		assertTrue(banco.evaluarSolicitudDe(cliente));
 		assertEquals(cliente.getCuenta(),12000f);
+	}
+	
+	@Test
+	void testSolicitarCreditoPersonalPorHomeBanking() {
+		
+		banco.canalDeAtencio()
 	}
 
 }
