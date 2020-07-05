@@ -17,7 +17,7 @@ class EncriptadorNaiveTest {
 	}
 
 	@Test
-	void test() {
+	void testEncriptoMensaje() {
 		
 		
 		String mensaje = "Hola Javi";

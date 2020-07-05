@@ -21,26 +21,21 @@ class CambioVocalesTest {
 	}
 
 	@Test
-	void test() {
+	void testEncriptoMensajeCambiandoVocalesYDesencripto() {
 		
-		String mensaje = "Hola";
+		String mensaje = "Yo soy bueno";
 		
-		String mensajeEncriptado = "Hale";
 		
-		List<String> lista = new ArrayList<String>();
+		String mensajeEncriptado = "Yu suy bainu";
 		
-		for(String s : mensaje.split("")) {
 			
-			lista.add(s);
-		}
+		assertEquals(mensajeEncriptado, encriptador.encriptar(mensaje));
 		
-		String st = "";
-		for(String s : lista) {
-			
-			st.concat(s);
-		}
 		
-		assertEquals("Ho","H".concat("o"));
+		
+		assertEquals(mensaje, encriptador.desencriptar(mensajeEncriptado));
 	}
+	
+	
 
 }
