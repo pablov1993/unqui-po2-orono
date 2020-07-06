@@ -8,8 +8,7 @@ public class Reproduciendo extends EstadoReproductor {
 	public Reproduciendo(Reproductor reproductor, Ireproducible cancion) {
 		
 		this.cancion = cancion;
-		this.reproductor = reproductor;
-	}
+		this.reproductor = reproductor;}
 
 	@Override
 	protected void reproducirCancion(Ireproducible cancion) throws ReproductorException {
