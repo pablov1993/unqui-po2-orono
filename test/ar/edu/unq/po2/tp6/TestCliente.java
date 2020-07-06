@@ -36,10 +36,5 @@ class TestCliente {
 		assertEquals(cliente.getCuenta(),12000f);
 	}
 	
-	@Test
-	void testSolicitarCreditoPersonalPorHomeBanking() {
-		
-		banco.canalDeAtencio()
-	}
 
 }
